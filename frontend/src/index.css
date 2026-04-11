@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: #000000;
+    --color-surface: #09090b;
+    --color-accent: #3b82f6;
+    --color-border: #27272a;
+    
+    color-scheme: dark;
+    background-color: var(--color-background);
+    color: #ffffff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-white text-black font-semibold py-2 px-4 rounded-lg hover:bg-zinc-200 transition-all flex items-center justify-center gap-2;
+  }
+  
+  .card-premium {
+    @apply bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 shadow-2xl;
+  }
+  
+  .text-secondary {
+    @apply text-zinc-400;
+  }
+  
+  .heading-hero {
+    @apply font-black text-white tracking-tighter;
+  }
+}
+
+/* Custom Utilities for Premium Look */
+.glass {
+  background: rgba(9, 9, 11, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
