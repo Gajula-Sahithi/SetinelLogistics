@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { ref, onValue, update } from 'firebase/database';
 import { db } from '../firebase';
 import Layout from '../components/Layout';
@@ -31,7 +31,7 @@ const ViewShipments = () => {
     if (!rerouting || !rerouteReason.trim()) return;
 
     try {
-      const response = await axios.post('http://localhost:5000/api/shipments/reroute', {
+      const response = await axios.post('/api/shipments/reroute', {
         shipmentId: rerouting.id,
         reason: rerouteReason,
         currentRoute: `${rerouting.origin} to ${rerouting.destination}`,
@@ -319,7 +319,7 @@ const ViewShipments = () => {
                     Route Visualization
                   </h3>
                   <p className="text-sm text-[var(--text-tertiary)]">
-                    {selectedShipment.id} • {selectedShipment.origin} → {selectedShipment.destination}
+                    {selectedShipment.id} â€¢ {selectedShipment.origin} â†’ {selectedShipment.destination}
                   </p>
                 </div>
                 <button 
@@ -377,7 +377,7 @@ const ViewShipments = () => {
                     Manual Reroute
                   </h3>
                   <p className="text-[10px] font-bold text-[var(--text-tertiary)] uppercase tracking-widest">
-                    {rerouting.id} • {rerouting.origin} → {rerouting.destination}
+                    {rerouting.id} â€¢ {rerouting.origin} â†’ {rerouting.destination}
                   </p>
                 </div>
                 <button 
@@ -427,3 +427,4 @@ const ViewShipments = () => {
 };
 
 export default ViewShipments;
+

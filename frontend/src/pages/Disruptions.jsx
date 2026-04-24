@@ -39,7 +39,7 @@ const Disruptions = () => {
               <button
                  onClick={async () => {
                     try {
-                       const res = await fetch('http://localhost:5000/api/trigger-analysis', { method: 'POST' });
+                       const res = await fetch('/api/trigger-analysis', { method: 'POST' });
                        if (res.ok) alert('Analysis triggered successfully');
                        else alert('Failed to trigger analysis');
                     } catch (e) {
@@ -185,7 +185,7 @@ const Disruptions = () => {
                                <button 
                                   onClick={async () => {
                                      try {
-                                        const res = await fetch('http://localhost:5000/api/shipments/approve-reroute', {
+                                        const res = await fetch('/api/shipments/approve-reroute', {
                                            method: 'POST',
                                            headers: { 'Content-Type': 'application/json' },
                                            body: JSON.stringify({ shipmentId: event.shipmentId })
@@ -231,6 +231,7 @@ const Disruptions = () => {
 };
 
 export default Disruptions;
+
 
 
 

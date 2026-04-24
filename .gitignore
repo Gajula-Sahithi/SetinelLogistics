@@ -4,12 +4,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Environment variables — exclude backend secrets
+backend/**/.env
+backend/**/.env.*
+
+# frontend/.env contains only public VITE_ Firebase keys — committed intentionally
+# so Vercel build can access them. Secret API keys are set in Vercel dashboard.
+# frontend/.env excluded � set VITE_ vars in Vercel dashboard
 
 # Build outputs
 dist/

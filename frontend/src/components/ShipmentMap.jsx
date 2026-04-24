@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import axios from 'axios';
 import 'leaflet/dist/leaflet.css';
@@ -110,7 +110,7 @@ const ShipmentMap = ({ origin, destination, currentLocation, transportType, ship
         transportType: transport || 'Road'
       };
 
-      const response = await axios.post('http://localhost:5000/api/estimate-eta', {
+      const response = await axios.post('/api/estimate-eta', {
         totalDistance: totalDist,
         remainingDistance: remainingDist,
         transportType: shipment.transportType,
@@ -282,3 +282,4 @@ const ShipmentMap = ({ origin, destination, currentLocation, transportType, ship
 };
 
 export default ShipmentMap;
+
