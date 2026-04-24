@@ -1,4 +1,4 @@
-// api/trigger-analysis.js — POST /api/trigger-analysis
+﻿// api/trigger-analysis.js â€” POST /api/trigger-analysis
 // Triggers a full disruption analysis cycle across all shipments
 const { Groq } = require('groq-sdk');
 const axios = require('axios');
@@ -14,11 +14,11 @@ const performAIAnalysis = async (shipment, newsFeed, weather) => {
     const temp = (weather.main?.temp || 273.15) - 273.15;
 
     const prompt = `
-      You are a senior logistics risk analyst for SentinelLogistics AI.
+      You are a senior logistics risk analyst for RouteIQLogistics AI.
       Analyze risk for shipment ${shipment.id} from ${shipment.origin} to ${shipment.destination}.
       ROUTE: ${shipment.waypoints ? JSON.stringify(shipment.waypoints) : 'Direct segment'}
       LOGISTICS NEWS:\n${newsSummaries}
-      WEATHER: ${weatherDesc}, ${temp.toFixed(1)}°C
+      WEATHER: ${weatherDesc}, ${temp.toFixed(1)}Â°C
       Return ONLY JSON: {
         "shipmentId": "${shipment.id}",
         "riskScore": (0-100),
@@ -44,7 +44,7 @@ const performAIAnalysis = async (shipment, newsFeed, weather) => {
     return {
       shipmentId: shipment.id,
       riskScore: 50,
-      riskReason: 'AI analysis failed — using protective baseline.',
+      riskReason: 'AI analysis failed â€” using protective baseline.',
       confidence: 'LOW',
       delayProbability: 'MEDIUM',
       estimatedDelayRange: 'Unknown',
@@ -138,3 +138,4 @@ module.exports = async (req, res) => {
     return res.status(500).json({ error: err.message });
   }
 };
+

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Sidebar from './Sidebar';
 import { User, Bell, ChevronRight, Globe } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
         <header className="h-20 border-b border-border/50 flex items-center justify-between px-10 bg-background/80 backdrop-blur-xl sticky top-0 z-50">
           <div className="flex items-center gap-3 font-l5-micro text-text-muted">
             <Globe className="w-3.5 h-3.5 text-accent" />
-            <span className="tracking-[0.2em]">Sentinel Protocol v4.0</span>
+            <span className="tracking-[0.2em]">RouteIQ Protocol v4.0</span>
             <ChevronRight className="w-3 h-3 text-border" />
             <span className="text-text-primary font-bold">{path[0] || 'Operational Overview'}</span>
           </div>
@@ -50,3 +50,4 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+

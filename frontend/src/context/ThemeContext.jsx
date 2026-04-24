@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+﻿import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
@@ -8,7 +8,7 @@ export const ThemeProvider = ({ children }) => {
   // Check localStorage or system preference
   const getInitialTheme = () => {
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('sentinel-theme');
+      const savedTheme = localStorage.getItem('routeiq-theme');
       if (savedTheme) return savedTheme;
       
       // Check system preference
@@ -32,7 +32,7 @@ export const ThemeProvider = ({ children }) => {
     }
     
     // Save to localStorage
-    localStorage.setItem('sentinel-theme', theme);
+    localStorage.setItem('routeiq-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
@@ -52,3 +52,4 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+

@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const admin = require('firebase-admin');
@@ -53,7 +53,7 @@ const performAIAnalysis = async (shipment, newsFeed, weather) => {
     const temp = (weather.main?.temp || 0) - 273.15;
 
     const systemPrompt = `
-      You are a senior logistics risk analyst for SentinelLogistics AI. 
+      You are a senior logistics risk analyst for RouteIQLogistics AI. 
       Analyze the risk for shipment ${shipment.id} from ${shipment.origin} to ${shipment.destination}.
       
       ROUTE GEOMETRY (Waypoints):
@@ -64,7 +64,7 @@ const performAIAnalysis = async (shipment, newsFeed, weather) => {
       
       CURRENT WEATHER AT SHIPMENT LOCATION:
       - Condition: ${weatherDesc}
-      - Temp: ${temp.toFixed(1)}°C
+      - Temp: ${temp.toFixed(1)}Â°C
       
       TASK:
       1. Identify if this shipment is at risk based on the news and weather.
@@ -561,3 +561,4 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`SENTINEL UNIFIED SERVER RUNNING`);
   console.log(`URL: http://localhost:${PORT}`);
 });
+

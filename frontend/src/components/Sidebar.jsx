@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
   LayoutDashboard, Map, Activity, MapPin,
@@ -63,7 +63,7 @@ const Sidebar = () => {
             <Shield className="w-6 h-6 text-white" />
           </div>
           <div className="flex flex-col">
-            <span className="text-2xl font-l1-hero text-text-primary tracking-wider">Sentinel</span>
+            <span className="text-2xl font-l1-hero text-text-primary tracking-wider">RouteIQ</span>
             <span className="text-[10px] font-l5-micro text-accent -mt-1">Logistics AI</span>
           </div>
         </div>
@@ -173,4 +173,5 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
 

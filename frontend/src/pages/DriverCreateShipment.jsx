@@ -42,7 +42,7 @@ const DriverCreateShipment = () => {
             createdBy: user?.uid,
             createdByName: user?.displayName || user?.email,
             assignedDriverUid: user?.uid, // Auto-assign to creating driver
-            carrier: 'Sentinel Driver Network',
+            carrier: 'RouteIQ Driver Network',
             requiresApproval: true
         };
 
@@ -194,5 +194,6 @@ const DriverCreateShipment = () => {
 };
 
 export default DriverCreateShipment;
+
 
 

@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+﻿from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from groq import Groq
 import os
@@ -35,7 +35,7 @@ async def analyze_risk(request: RiskAnalysisRequest):
         temp = request.weather.get('main', {}).get('temp', 0) - 273.15 # Celsius
         
         system_prompt = f"""
-        You are a senior logistics risk analyst for SentinelLogistics AI. 
+        You are a senior logistics risk analyst for RouteIQLogistics AI. 
         Analyze the risk for shipment {request.shipment.get('id')} from {request.shipment.get('origin')} to {request.shipment.get('destination')}.
         
         WAYPOINTS/ROUTE: 
@@ -46,7 +46,7 @@ async def analyze_risk(request: RiskAnalysisRequest):
         
         CURRENT WEATHER AT SHIPMENT LOCATION:
         - Condition: {weather_description}
-        - Temp: {temp:.1f}°C
+        - Temp: {temp:.1f}Â°C
         
         TASK:
         1. Identify if this shipment is at risk based on the news and weather.
@@ -94,7 +94,7 @@ async def analyze_risk(request: RiskAnalysisRequest):
 @app.get("/")
 def read_root():
     return {
-        "service": "Sentinel AI Disruption Engine",
+        "service": "RouteIQ AI Disruption Engine",
         "model": f"Groq ({GROQ_MODEL})",
         "status": "Ready"
     }
@@ -102,3 +102,4 @@ def read_root():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+

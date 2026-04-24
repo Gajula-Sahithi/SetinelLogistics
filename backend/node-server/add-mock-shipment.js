@@ -1,11 +1,11 @@
-const { getDatabase, ref, set } = require('firebase-admin/database');
+﻿const { getDatabase, ref, set } = require('firebase-admin/database');
 const admin = require('firebase-admin');
 
 // Initialize Firebase Admin (use environment variables)
 const serviceAccount = {
-  projectId: "sentinellogistics-69d7b",
+  projectId: "routeiqlogistics-69d7b",
   privateKey: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n') : undefined,
-  clientEmail: process.env.FIREBASE_CLIENT_EMAIL || "firebase-adminsdk-xxxxx@sentinellogistics-69d7b.iam.gserviceaccount.com"
+  clientEmail: process.env.FIREBASE_CLIENT_EMAIL || "firebase-adminsdk-xxxxx@routeiqlogistics-69d7b.iam.gserviceaccount.com"
 };
 
 if (!serviceAccount.privateKey) {
@@ -16,7 +16,7 @@ if (!serviceAccount.privateKey) {
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://sentinellogistics-69d7b-default-rtdb.firebaseio.com"
+  databaseURL: "https://routeiqlogistics-69d7b-default-rtdb.firebaseio.com"
 });
 
 const db = getDatabase();
@@ -25,7 +25,7 @@ const mockShipment = {
   id: "TEST-001",
   origin: "Hyderabad",
   destination: "Chennai",
-  carrier: "Sentinel Internal",
+  carrier: "RouteIQ Internal",
   cargo: "Electronics",
   driverEmail: "24211a05h1@bvrit.ac.in",
   driverPhone: "1111111111",
@@ -45,15 +45,16 @@ const mockShipment = {
 async function addShipment() {
   try {
     await set(ref(db, `shipments/${mockShipment.id}`), mockShipment);
-    console.log("✅ Mock shipment added successfully!");
+    console.log("âœ… Mock shipment added successfully!");
     console.log("Shipment ID:", mockShipment.id);
     console.log("Driver Email:", mockShipment.driverEmail);
     console.log("Driver Name:", mockShipment.driverName);
     console.log("Driver Phone:", mockShipment.driverPhone);
     console.log("\nNow login with email 24211a05h1@bvrit.ac.in to see this shipment in Driver Portal.");
   } catch (error) {
-    console.error("❌ Error adding shipment:", error);
+    console.error("âŒ Error adding shipment:", error);
   }
 }
 
 addShipment();
+

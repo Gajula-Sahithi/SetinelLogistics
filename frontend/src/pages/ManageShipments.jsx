@@ -20,7 +20,7 @@ const ManageShipments = () => {
         id: '',
         origin: '',
         destination: '',
-        carrier: 'Sentinel Internal',
+        carrier: 'RouteIQ Internal',
         cargo: '',
         transportType: 'Road', // Road, Rail, Air, Sea
         driverEmail: '',
@@ -113,7 +113,7 @@ const ManageShipments = () => {
             id: '', 
             origin: '', 
             destination: '', 
-            carrier: 'Sentinel Internal', 
+            carrier: 'RouteIQ Internal', 
             cargo: '',
             transportType: 'Road',
             driverEmail: '',
@@ -394,5 +394,6 @@ const ManageShipments = () => {
 };
 
 export default ManageShipments;
+
 
 

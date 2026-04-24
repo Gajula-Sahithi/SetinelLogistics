@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { Shield, Lock, Globe, ArrowRight, UserCheck } from 'lucide-react';
@@ -62,7 +62,7 @@ const Login = () => {
             <Shield className="w-12 h-12 text-cyan-400 group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
           </div>
           <h1 className="text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500 tracking-tight mb-3">
-            Sentinel
+            RouteIQ
           </h1>
           <p className="text-xs sm:text-sm font-bold text-cyan-400/80 tracking-[0.4em] uppercase">
             Risk Intelligence Terminal
@@ -153,7 +153,7 @@ const Login = () => {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="admin@sentinel.ai"
+                      placeholder="admin@routeiq.ai"
                       className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-sm font-medium text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
                     />
                   </div>
@@ -164,7 +164,7 @@ const Login = () => {
                       required
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      placeholder="••••••••"
+                      placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                       className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-sm font-medium text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
                     />
                   </div>
@@ -198,7 +198,7 @@ const Login = () => {
 
         <div className="text-center mt-8">
           <p className="text-[10px] font-bold text-zinc-600 tracking-[0.3em] uppercase">
-            ISO-27001 Certified System &bull; © 2026
+            ISO-27001 Certified System &bull; Â© 2026
           </p>
         </div>
       </div>
@@ -207,4 +207,5 @@ const Login = () => {
 };
 
 export default Login;
+
 
